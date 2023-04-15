@@ -8,7 +8,9 @@ function onSubmitForm(event) {
   const {
     elements: { delay, step, amount },
   } = event.currentTarget;
-  for (let i = 1; i <= amount.value; i++) {
+  console.log('✋😎👉 ~  event.currentTarget:', event.currentTarget);
+  console.dir(event.currentTarget);
+  for (let i = 0; i < amount.value; i++) {
     const delayPromise = Number(step.value) * i + Number(delay.value);
     createPromise(i, delayPromise)
       .then(({ position, delay }) => {
