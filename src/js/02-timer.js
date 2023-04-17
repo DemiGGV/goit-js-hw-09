@@ -52,8 +52,10 @@ function onBtnStart() {
   }
   myTimer = setInterval(updateTimer, 1000);
   buttonEl.removeEventListener('click', onBtnStart);
-}
 
+  inputEl.setAttribute('disabled', 'true');
+}
+// disabled="disabled"
 function updateTimer() {
   delayTime = selectedTime - new Date().getTime();
   if (delayTime < 1000) {
